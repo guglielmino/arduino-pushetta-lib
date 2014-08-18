@@ -1,0 +1,46 @@
+#######################################
+# Syntax Coloring Map For Pushetta
+#######################################
+
+#######################################
+# Class (KEYWORD3)
+#######################################
+
+Pushetta	KEYWORD3
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# methods names in commond
+begin	KEYWORD2
+end	KEYWORD2
+available	KEYWORD2
+read	KEYWORD2
+peek	KEYWORD2
+write	KEYWORD2
+flush	KEYWORD2
+bool	KEYWORD2
+
+# Pushetta Class
+pushMessage	KEYWORD2
+
+
+# Process Class
+addParameter	KEYWORD2
+runAsynchronously	KEYWORD2
+run	KEYWORD2
+running	KEYWORD2
+exitValue	KEYWORD2
+runShellCommand	KEYWORD2
+runShellCommandAsynchronously	KEYWORD2
+
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+FILE_READ	LITERAL1
+FILE_WRITE	LITERAL1
+FILE_APPEND	LITERAL1
