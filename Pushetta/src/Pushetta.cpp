@@ -34,7 +34,7 @@ unsigned int Pushetta::pushMessage(const String& channelName, const String& mess
   String *body = new String("{ \"body\" : ");
   *body += "\"" + message + "\",";
   *body += "\"expire\" : \"2020-01-01\",";
-  *body += "\"mime_type\" : \"text/plain\"}";
+  *body += "\"message_type\" : \"text/plain\"}";
 
   addParameter((const String&)body);
 
