@@ -23,24 +23,15 @@ Pushetta::Pushetta(const String& _apikey){
 
 
 unsigned int Pushetta::pushMessage(const String& channelName, const String& message) {
-  begin("curl");
-  addParameter("-H");
-  addParameter("Authorization: Token " + apikey);
-  addParameter("-H");
-  addParameter("Content-Type: application/json");
-  addParameter("-X POST");
-  addParameter("-d");
+  String auth = " -H \"Authorization: Token " + apikey + "\"";
+  String contentType = " -H \"Content-Type: application/json\"";
+  String body = " -d '{ \"body\" : \"" + message + "\", \"expire\" : \"2020-01-01\", \"message_type\" : \"text/plain\" }'";
+  String url = " http://api.pushetta.com/api/pushes/" + channelName + "/";
 
-  String *body = new String("{ \"body\" : ");
-  *body += "\"" + message + "\",";
-  *body += "\"expire\" : \"2020-01-01\",";
-  *body += "\"message_type\" : \"text/plain\"}";
-
-  addParameter((const String&)body);
-
-  addParameter("http://api.pushetta.com/api/pushes/" + channelName + "/");
-
-  return run();
+  String command = "curl -X POST" + auth + contentType + body + url;
+  Console.println(command);
+  return runShellCommand(command);
+  
 }
 
 
@@ -51,5 +42,6 @@ boolean Pushetta::ready() {
 unsigned int Pushetta::getResult() {
   return exitValue();
 }
+
 
 
