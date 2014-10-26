@@ -23,17 +23,6 @@ Pushetta::Pushetta(const String& _apikey){
 
 
 unsigned int Pushetta::pushMessage(const String& channelName, const String& message) {
-<<<<<<< Updated upstream
-  String auth = " -H \"Authorization: Token " + apikey + "\"";
-  String contentType = " -H \"Content-Type: application/json\"";
-  String body = " -d '{ \"body\" : \"" + message + "\", \"expire\" : \"2020-01-01\", \"message_type\" : \"text/plain\" }'";
-  String url = " http://api.pushetta.com/api/pushes/" + channelName + "/";
-
-  String command = "curl -X POST" + auth + contentType + body + url;
-  Console.println(command);
-  return runShellCommand(command);
-  
-=======
   begin("curl");
   addParameter("-H");
   addParameter("Authorization: Token " + apikey);
@@ -45,14 +34,13 @@ unsigned int Pushetta::pushMessage(const String& channelName, const String& mess
   String *body = new String("{ \"body\" : ");
   *body += "\"" + message + "\",";
   *body += "\"expire\" : \"2020-01-01\",";
-  *body += "\"mime_type\" : \"text/plain\"}";
+  *body += "\"message_type\" : \"text/plain\"}";
 
   addParameter((const String&)body);
 
   addParameter("http://api.pushetta.com/api/pushes/" + URLEncode(channelName) + "/");
 
   return run();
->>>>>>> Stashed changes
 }
 
 
@@ -69,9 +57,6 @@ String URLEncode(const char* msg)
     const char *hex = "0123456789abcdef";
     String encodedMsg = "";
 
-<<<<<<< Updated upstream
-
-=======
     while (*msg!='\0'){
         if( ('a' <= *msg && *msg <= 'z')
                 || ('A' <= *msg && *msg <= 'Z')
@@ -86,4 +71,3 @@ String URLEncode(const char* msg)
     }
     return encodedMsg;
 }
->>>>>>> Stashed changes
