@@ -21,21 +21,24 @@
 #include "Arduino.h"
 
 #include "Process.h"
-#include <Stream.h>
+#include "FileIO.h"
 
+class Pushetta  {
 
-class Pushetta : public Process {
-  
   public:
 
-    Pushetta(const String& _apikey);
+    Pushetta(const String &_apikey);
 
-    unsigned int pushMessage(const String& channelName, const String& message);
+    unsigned int pushMessage(const String &channelName, const String &message);
     boolean ready();
     unsigned int getResult();
 
   private:
     String apikey;
+    Process proc;
+
+    String URLEncode(const String& unencoded);
+    void createShellFile();
 
 };
 
