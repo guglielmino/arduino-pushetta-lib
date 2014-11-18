@@ -16,7 +16,7 @@
 
 #include "Pushetta.h"
 
-#define SHELL_FILE "/mnt/sda2/push.sh"
+#define SHELL_FILE "/tmp/push.sh"
 
 Pushetta::Pushetta(const String &_apikey){
   apikey = _apikey;
