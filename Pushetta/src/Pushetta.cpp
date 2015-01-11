@@ -34,13 +34,13 @@ unsigned int Pushetta::pushMessage(const String &channelName, const String &mess
 
   String command;
 
-  command += ". ";
+   command += ". ";
   command += SHELL_FILE;
   command += " ";
   command +=  apikey;
-  command +=  " ";
+  command +=  " \"";
   command += message;
-  command += " ";
+  command += "\" ";
   command += channelName;
 
   Console.println(command);
