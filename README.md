@@ -1,5 +1,7 @@
 # arduino-pushetta-lib
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/guglielmino/arduino-pushetta-lib?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Pushetta is a Web API that provides an unificated way to send realtime notifications to multiple devices. Used with Arduino Yun it's possible to send alert, informations or any data in realtime to groups of subscribers (more on www.pushetta.com)
 
 # Usage
