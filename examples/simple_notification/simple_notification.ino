@@ -27,7 +27,7 @@ Pushetta p = Pushetta("-- YOUR API KEY HERE --");
 int interval = 3000;
 
 void setup() {
-
+ Bridge.begin();
 }
 
 void loop() { 
